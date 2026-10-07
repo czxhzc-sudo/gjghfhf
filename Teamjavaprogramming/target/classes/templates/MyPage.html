@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>마이페이지</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .top-menu {
+            height: 65px;
+
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 30px;
+        }
+
+        .back-button {
+            padding: 10px 18px;
+
+            border: 1px solid #ddd;
+            border-radius: 8px;
+
+            background-color: white;
+
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .back-button:hover {
+            background-color: #eeeeee;
+        }
+
+        .page-container {
+            width: 600px;
+            margin: 50px auto;
+        }
+
+        .page-title {
+            margin-bottom: 25px;
+        }
+
+        .page-title h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .profile-card {
+            background-color: white;
+
+            border: 1px solid #ddd;
+            border-radius: 12px;
+
+            padding: 30px;
+        }
+
+        .profile-icon {
+            text-align: center;
+            font-size: 60px;
+
+            margin-bottom: 20px;
+        }
+
+        .info-row {
+            display: flex;
+
+            padding: 15px 0;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-title {
+            width: 130px;
+
+            font-weight: bold;
+            color: #555555;
+        }
+
+        .info-value {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="top-menu">
+    <button class="back-button"
+            onclick="location.href='/main'">
+        ← 메인으로 돌아가기
+    </button>
+</div>
+<div class="page-container">
+
+    <div class="page-title">
+        <h1>마이페이지</h1>
+    </div>
+
+    <div class="profile-card">
+
+        <div class="profile-icon">
+            👤
+        </div>
+
+        <div class="info-row">
+            <div class="info-title">
+                아이디
+            </div>
+
+            <div class="info-value"
+                 th:text="${member.userName}">
+                아이디
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-title">
+                닉네임
+            </div>
+
+            <div class="info-value"
+                 th:text="${member.stdName}">
+                닉네임
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-title">
+                학교
+            </div>
+
+            <div class="info-value"
+                 th:text="${member.stdSchool}">
+                학교
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-title">
+                성별
+            </div>
+
+            <div class="info-value"
+                 th:text="${member.stdGender}">
+                성별
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-title">
+                생년월일
+            </div>
+
+            <div class="info-value"
+                 th:text="${member.stdBirth}">
+                생년월일
+            </div>
+        </div>
+
+        <div class="info-row">
+            <div class="info-title">
+                가입일
+            </div>
+
+            <div class="info-value"
+                 th:text="${member.createDate}">
+                가입일
+            </div>
+        </div>
+
+    </div>
+</div>
+<button onclick="location.href='/mypage/edit'">
+    회원정보 수정
+</button>
+</body>
+</html>
